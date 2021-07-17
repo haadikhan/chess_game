@@ -14,16 +14,16 @@ class Snake {
       return;
     }
     if (direction == Direction.left) {
-      posX -= 10;
+      posX -= 2;
     }
     if (direction == Direction.down) {
-      posY += 10;
+      posY += 2;
     }
     if (direction == Direction.up) {
-      posY -= 10;
+      posY -= 2;
     }
     if (direction == Direction.right) {
-      posX += 10;
+      posX += 2;
     }
     // print(posX);
     // print(posY);

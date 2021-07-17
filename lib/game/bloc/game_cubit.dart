@@ -4,11 +4,12 @@ import 'package:chess_game/models/snake.dart';
 
 class GameCubit extends Cubit<GameState> {
   GameCubit() : super(GameState()) {
-    // Stream<int>.periodic(const Duration(seconds: 2), (x) => x).listen((event) {
-    //   Snake snake = state.snake;
-    //   snake.moveSnake();
-    //   emit(state.copyWith(snake));
-    // });
+    Stream<int>.periodic(const Duration(milliseconds: 100), (x) => x)
+        .listen((event) {
+      Snake snake = state.snake;
+      snake.moveSnake();
+      emit(state.copyWith(snake));
+    });
   }
 
   onUpButtonPressed() {

@@ -51,12 +51,15 @@ class GameScreen extends StatelessWidget {
                 BlocBuilder<GameCubit, GameState>(builder: (context, state) {
                   return Text(state.snake.posY.toString());
                 }),
+                BlocBuilder<GameCubit, GameState>(builder: (context, state) {
+                  return Text(state.snake.direction.toString());
+                }),
               ],
             ),
           ),
-          // BlocBuilder<GameCubit, GameState>(builder: (context, state) {
-          //   return Expanded(child: DrawingScreen(state.snake));
-          // }),
+          BlocBuilder<GameCubit, GameState>(builder: (context, state) {
+            return Expanded(child: DrawingScreen(state.snake));
+          }),
         ],
       ),
     );
